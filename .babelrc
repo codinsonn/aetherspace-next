@@ -1,0 +1,31 @@
+{
+    "presets": [
+        [
+            "@babel/env",
+            {
+                "targets": {
+                    "browsers": "> 0.25%, not dead",
+                    "node": "10.13.0"
+                }
+            }
+        ],
+        "@babel/flow",
+        "@babel/react",
+        "next/babel"
+    ],
+    "plugins": [
+        "@babel/proposal-export-default-from",
+        "@babel/proposal-object-rest-spread",
+        "@babel/transform-runtime",
+        "@babel/syntax-dynamic-import",
+        [
+            "module-resolver",
+            {
+                "root": ["./"],
+                "alias": {
+                    "^react-native$": "react-native-web"
+                }
+            }
+        ]
+    ]
+}

@@ -1,0 +1,17 @@
+# NPM
+/npm-debug.log
+/node_modules/
+
+# Next
+.next
+/out/
+
+# Distribution folders
+/dist/
+
+# Hidden files & folders
+.idea
+.DS_Store
+.project
+.vscode
+.env

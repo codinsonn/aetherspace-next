@@ -1,0 +1,9 @@
+[ignore]
+.*/node_modules/.*
+.*/__test__/.*
+*.test.js
+
+[include]
+./src/client/*
+./src/server/*
+./src/shared/*
