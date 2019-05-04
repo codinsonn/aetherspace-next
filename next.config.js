@@ -5,7 +5,7 @@ const config = {
         // Overwrite webpack target when necessary
         if (process.env.WEBPACK_TARGET) config.target = process.env.WEBPACK_TARGET;
         // Alias react-native
-        config.resolve.alias = { ...(config.resolve.alias || {}), 'react-native$': 'react-native-web' };
+        config.resolve.alias = { ...(config.resolve.alias || {}), 'react-native': 'react-native-web' };
         // Return edited config
         return config;
     },

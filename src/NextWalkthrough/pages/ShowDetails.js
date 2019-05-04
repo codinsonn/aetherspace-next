@@ -1,16 +1,21 @@
 import React from 'react';
 import axios from 'axios';
-import styled from 'styled-components';
+import { css } from 'styled-components';
 import { Text } from 'react-native';
 // Components
-import { Layout } from '../../componentRegistry';
-import Image from '../components/Common/Image';
+import { Layout, Image } from '../../componentRegistry';
 // Styles
 import { PageTitle } from '../../styleRegistry';
 
 /* --- Styles ------------------------------------------------------------------------------ */
 
+const ShowImage = css`
+    margin-top: 20px;
+    width: 200px;
+`;
+
 const S = { PageTitle };
+const CSS = { ShowImage };
 
 /* --- <Show/> ------------------------------------------------------------------------------ */
 
@@ -18,7 +23,7 @@ const ShowDetails = ({ show }) => (
     <Layout>
         <S.PageTitle>{show.name}</S.PageTitle>
         <Text>{show.summary.replace(/<[/]?p>/g, '')}</Text>
-        {show.image && <Image resizeMode="contain" src={show.image.medium} />}
+        {show.image && <Image css={CSS.ShowImage} src={show.image.medium} />}
     </Layout>
 );
 
