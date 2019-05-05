@@ -16,12 +16,15 @@ export const cssDimensions = css => {
     let cssWidth = null;
     let cssHeight = null;
     let cssRatio = null;
+    let units = 'px';
     css.forEach(styleDefs => {
+        if (typeof styleDefs !== 'string') return;
         styleDefs.split(';\n').forEach(rule => {
-            if (rule.includes('height:') && rule.includes('px')) cssHeight = numbersFromString(rule)[0];
-            if (rule.includes('width:') && rule.includes('px')) cssWidth = numbersFromString(rule)[0];
+            if ((rule.includes('height:') || rule.includes('width:')) && rule.includes('%')) units = '%';
+            if (rule.includes('height:') && !rule.includes('max')) cssHeight = numbersFromString(rule)[0];
+            if (rule.includes('width:') && !rule.includes('max')) cssWidth = numbersFromString(rule)[0];
             if (cssWidth && cssHeight) cssRatio = cssHeight / cssWidth;
         });
     });
-    return { cssWidth, cssHeight, cssRatio };
+    return { cssWidth, cssHeight, cssRatio, units };
 };

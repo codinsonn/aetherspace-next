@@ -11,7 +11,8 @@ import { PageTitle } from '../../styleRegistry';
 
 const ShowImage = css`
     margin-top: 20px;
-    width: 200px;
+    border-radius: 10px;
+    width: 300px;
 `;
 
 const S = { PageTitle };
